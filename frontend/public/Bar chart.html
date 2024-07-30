@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/v5/echarts.min.js"></script>
+</head>
+<body>
+    <div id="fc57e96463ea41ec97023be355864cb1" class="chart-container" style="width:1200px; height:800px;"></div>
+    <script>
+        var chart_fc57e96463ea41ec97023be355864cb1 = echarts.init(
+            document.getElementById('fc57e96463ea41ec97023be355864cb1'), 'light', {renderer: 'canvas'});
+        var option_fc57e96463ea41ec97023be355864cb1 = {
+            animation: true,
+            animationThreshold: 2000,
+            animationDuration: 1000,
+            animationEasing: 'cubicOut',
+            animationDelay: 0,
+            animationDurationUpdate: 300,
+            animationEasingUpdate: 'cubicOut',
+            animationDelayUpdate: 0,
+            aria: { enabled: false },
+            series: [
+                {
+                    type: 'bar',
+                    name: 'Alpha',
+                    legendHoverLink: true,
+                    data: [0, 285, 25, 251, 65, 0, 195, 69],
+                    stack: 'stack1',
+                    itemStyle: {
+                        borderRadius: [5, 5, 0, 0]
+                    }
+                },
+                {
+                    type: 'bar',
+                    name: 'Beta',
+                    legendHoverLink: true,
+                    data: [5, 50, 3, 49, 8, 0, 13, 19],
+                    stack: 'stack1',
+                    itemStyle: {
+                        borderRadius: [5, 5, 0, 0]
+                    }
+                },
+                {
+                    type: 'bar',
+                    name: 'Delta',
+                    legendHoverLink: true,
+                    data: [70, 10611, 133, 188, 88, 3, 7689, 82],
+                    stack: 'stack1',
+                    itemStyle: {
+                        borderRadius: [5, 5, 0, 0]
+                    }
+                },
+                {
+                    type: 'bar',
+                    name: 'Gamma',
+                    legendHoverLink: true,
+                    data: [0, 6, 0, 0, 0, 0, 0, 1],
+                    stack: 'stack1',
+                    itemStyle: {
+                        borderRadius: [5, 5, 0, 0]
+                    }
+                },
+                {
+                    type: 'bar',
+                    name: 'Omicron',
+                    legendHoverLink: true,
+                    data: [9220, 42219, 100, 34672, 16551, 6596, 53689, 14766],
+                    stack: 'stack1',
+                    itemStyle: {
+                        borderRadius: [5, 5, 0, 0]
+                    }
+                }
+            ],
+            legend: {
+                data: ['Alpha', 'Beta', 'Delta', 'Gamma', 'Omicron'],
+                padding: 5,
+                itemGap: 10,
+                itemWidth: 25,
+                itemHeight: 14,
+                backgroundColor: 'transparent',
+                borderColor: '#ccc',
+                borderRadius: 0,
+                pageButtonItemGap: 5,
+                pageButtonPosition: 'end',
+                pageFormatter: '{current}/{total}',
+                pageIconColor: '#2f4554',
+                pageIconInactiveColor: '#aaa',
+                pageIconSize: 15,
+                animationDurationUpdate: 800,
+                selector: false,
+                selectorPosition: 'auto',
+                selectorItemGap: 7,
+                selectorButtonGap: 10,
+                top: '10%'
+            },
+            tooltip: {
+                show: true,
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                },
+                textStyle: {
+                    fontSize: 14
+                },
+                borderWidth: 0,
+                padding: 5,
+                order: 'seriesAsc'
+            },
+            xAxis: [
+                {
+                    name: 'Province',
+                    show: true,
+                    data: [
+                        'Australian Capital Territory',
+                        'New South Wales',
+                        'Northern Territory',
+                        'Queensland',
+                        'South Australia',
+                        'Tasmania',
+                        'Victoria',
+                        'Western Australia'
+                    ],
+                    axisLabel: {
+                        interval: 0,
+                        rotate: 30,
+                        margin: 20
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    name: 'Number of cases',
+                    show: true,
+                    splitLine: {
+                        show: true
+                    }
+                }
+            ],
+            title: {
+                show: true,
+                text: 'Distribution of COVID-19 Variants in Different Provinces of Australia',
+                padding: 10,
+                itemGap: 10,
+                top: '0%',
+                left: 'center'
+            },
+            toolbox: {
+                show: true,
+                orient: 'horizontal',
+                itemSize: 15,
+                itemGap: 10,
+                left: 'right',
+                top: '0%',
+                feature: {
+                    saveAsImage: {
+                        type: 'png',
+                        title: 'Save as Image',
+                        pixelRatio: 1
+                    },
+                    restore: {
+                        title: 'Restore'
+                    },
+                    dataView: {
+                        title: 'Data View',
+                        readOnly: false,
+                        lang: ['Data View', 'Close', 'Refresh'],
+                        backgroundColor: '#fff',
+                        textareaColor: '#fff',
+                        textareaBorderColor: '#333',
+                        textColor: '#000',
+                        buttonColor: '#c23531',
+                        buttonTextColor: '#fff'
+                    },
+                    dataZoom: {
+                        title: {
+                            zoom: 'Zoom',
+                            back: 'Restore Zoom'
+                        }
+                    },
+                    magicType: {
+                        type: ['line', 'bar', 'stack', 'tiled'],
+                        title: {
+                            line: 'Line Chart',
+                            bar: 'Bar Chart',
+                            stack: 'Stack',
+                            tiled: 'Tiled'
+                        }
+                    }
+                }
+            },
+            dataZoom: [
+                {
+                    show: true,
+                    type: 'slider',
+                    start: 20,
+                    end: 80,
+                    bottom: '5%'
+                },
+                {
+                    show: true,
+                    type: 'inside',
+                    start: 20,
+                    end: 80
+                }
+            ]
+        };
+        chart_fc57e96463ea41ec97023be355864cb1.setOption(option_fc57e96463ea41ec97023be355864cb1);
+    </script>
+</body>
+</html>
