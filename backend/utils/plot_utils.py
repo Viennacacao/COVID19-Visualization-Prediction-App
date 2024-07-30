@@ -4,7 +4,7 @@ import os
 
 def save_plot_pyecharts(dates, values, virus_name, chart_type, max_infected, max_infected_day):
     line = (
-        Line(init_opts=opts.InitOpts(bg_color='white'))
+        Line(init_opts=opts.InitOpts(width="480px", height="380px", bg_color='white'))
         .add_xaxis(dates)
         .add_yaxis("Susceptible", values[:, 0].tolist(), is_smooth=True)
         .add_yaxis("Exposed", values[:, 1].tolist(), is_smooth=True)
@@ -17,7 +17,7 @@ def save_plot_pyecharts(dates, values, virus_name, chart_type, max_infected, max
             label_opts=opts.LabelOpts(is_show=False),
         )
         .set_global_opts(
-            title_opts=opts.TitleOpts(title=f"{virus_name} Variant - {chart_type}"),
+            title_opts=opts.TitleOpts(title=f"{virus_name} Variant - {chart_type}", pos_top='10%'),
             xaxis_opts=opts.AxisOpts(
                 axistick_opts=opts.AxisTickOpts(is_align_with_label=True),
                 is_scale=False,
@@ -38,7 +38,7 @@ def save_daily_new_infections_plot_pyecharts(dates, values, virus_name):
     daily_new_infections.insert(0, values[0, 2])
 
     line = (
-        Line(init_opts=opts.InitOpts(bg_color='white'))
+        Line(init_opts=opts.InitOpts(width="480px", height="380px", bg_color='white'))
         .add_xaxis(dates)
         .add_yaxis("Daily New Infections", daily_new_infections, is_smooth=True)
         .set_series_opts(
@@ -46,7 +46,7 @@ def save_daily_new_infections_plot_pyecharts(dates, values, virus_name):
             label_opts=opts.LabelOpts(is_show=False),
         )
         .set_global_opts(
-            title_opts=opts.TitleOpts(title=f"{virus_name} Variant - Daily New Infections"),
+            title_opts=opts.TitleOpts(title=f"{virus_name} Variant - Daily New Infections", pos_top='10%'),
             xaxis_opts=opts.AxisOpts(
                 axistick_opts=opts.AxisTickOpts(is_align_with_label=True),
                 is_scale=False,
