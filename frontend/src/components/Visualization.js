@@ -97,8 +97,8 @@ function Visualization() {
       >
         <Paper
           sx={{
-            width: '50%',
-            height: '100%',
+            width: '800px',  // Adjust width to 600px
+            height: '500px',
             overflow: 'hidden',
             display: 'flex',
             justifyContent: 'center',
@@ -111,8 +111,8 @@ function Visualization() {
           <iframe
             src={selectedHtml}
             style={{ 
-              width: '100%', 
-              height: '100%', 
+              width: '800px',  // Adjust width to 600px
+              height: '500px',
               border: 'none',
               transform: 'scale(1)', // Scale down to 80%
               transformOrigin: '0 0',  // Scale from the top-left corner

@@ -17,23 +17,23 @@ function Home() {
     >
       <Box
         sx={{
-          display: 'flex',       // Use flexbox for layout
-          flexDirection: 'row',  // Align items in a row
-          gap: 2,                // Add some space between the items
-          mb: 2,                 // Add some margin at the bottom of this row
+          display: 'flex',
+          flexDirection: 'row',
+          gap: 2,
+          mb: 2,
         }}
       >
         <Paper
           sx={{
-            width: '50%',         // Adjust width as needed
-            height: '600px',
+            width: '800px',  // Adjust width to 600px
+            height: '500px',
             overflow: 'hidden',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            p: 2,  // Add padding if needed
-            borderRadius: 1,  // Optional: add rounded corners
-            boxShadow: 3,     // Optional: add shadow effect
+            p: 2,
+            borderRadius: 1,
+            boxShadow: 3,
           }}
         >
           <iframe
@@ -52,15 +52,15 @@ function Home() {
 
         <Paper
           sx={{
-            width: '50%',         // Adjust width as needed
-            height: '600px',
+            width: '500px',  // Adjust width to 400px
+            height: '500px',
             overflow: 'hidden',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            p: 2,  // Add padding if needed
-            borderRadius: 1,  // Optional: add rounded corners
-            boxShadow: 3,     // Optional: add shadow effect
+            p: 2,
+            borderRadius: 1,
+            boxShadow: 3,
           }}
         >
           <iframe
@@ -86,9 +86,9 @@ function Home() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          p: 2,  // Add padding if needed
-          borderRadius: 1,  // Optional: add rounded corners
-          boxShadow: 3,     // Optional: add shadow effect
+          p: 2,
+          borderRadius: 1,
+          boxShadow: 3,
         }}
       >
         <iframe
