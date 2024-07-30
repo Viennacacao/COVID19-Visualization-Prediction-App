@@ -114,7 +114,7 @@ function Visualization() {
               width: '800px',  // Adjust width to 600px
               height: '500px',
               border: 'none',
-              transform: 'scale(1)', // Scale down to 80%
+              transform: 'scale(0.9)', // Scale down to 80%
               transformOrigin: '0 0',  // Scale from the top-left corner
               overflow: 'hidden'       // Hide overflow from scaling
             }} 
@@ -141,7 +141,7 @@ function Visualization() {
               width: '100%', 
               height: '100%', 
               border: 'none',
-              transform: 'scale(1)', // Scale down to 80%
+              transform: 'scale(0.8)', // Scale down to 80%
               transformOrigin: '0 0',  // Scale from the top-left corner
               overflow: 'hidden'       // Hide overflow from scaling
             }} 
@@ -169,6 +169,7 @@ function Visualization() {
             width: '100%', 
             height: '100%', 
             border: 'none',
+            transform: 'scale(1)', // Scale down to 80%
             transformOrigin: '0 0',  // Scale from the top-left corner
             overflow: 'hidden'       // Hide overflow from scaling
           }} 

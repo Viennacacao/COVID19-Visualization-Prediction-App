@@ -15,25 +15,28 @@ def predict_and_generate_chart():
         virus_name = data.get('virus_name')
         total_population = int(data.get('total_population'))  # 转换为整数
         current_infected = int(data.get('current_infected'))  # 转换为整数
+        recovered = int(data.get('recovered'))  # 新增的输入字段
         vaccinated = int(data.get('vaccinated'))  # 转换为整数
 
         print(f"Received data: {data}")
 
         try:
-            sol, t, six_month_infected, max_infected, max_infected_day = run_model(total_population, current_infected, vaccinated, virus_name)
+            sol, t, six_month_infected, max_infected, max_infected_day = run_model(total_population, current_infected, recovered, vaccinated, virus_name)
         except ValueError as e:
             print(f"Error in model computation: {e}")
             return jsonify({"error": str(e)}), 400
 
+        dates = [(datetime.now() + timedelta(days=i)).strftime('%Y-%m-%d') for i in range(len(t))]
         chart_paths = {
-            'six_months': save_plot_pyecharts(t[:182], sol[:182], virus_name, 'six_months', max_infected, max_infected_day),
-            'daily_new_infections': save_daily_new_infections_plot_pyecharts(t[:182], sol[:182], virus_name)
+            'six_months': save_plot_pyecharts(dates[:182], sol[:182], virus_name, 'six_months', max_infected, max_infected_day),
+            'daily_new_infections': save_daily_new_infections_plot_pyecharts(dates[:182], sol[:182], virus_name)
         }
 
         prediction_result = {
             'virus_name': virus_name,
             'total_population': total_population,
             'current_infected': current_infected,
+            'recovered': recovered,
             'vaccinated': vaccinated,
             'six_month_infected': int(six_month_infected),
             'peak_infected': int(max_infected),

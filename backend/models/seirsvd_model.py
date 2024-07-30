@@ -25,7 +25,7 @@ def policy_effect(t):
 def seasonality_effect(t):
     return 1 + 0.2 * np.sin(2 * np.pi * t / 365)
 
-def run_model(total_population, current_infected, vaccinated, variant):
+def run_model(total_population, current_infected, recovered, vaccinated, variant):
     if variant.lower() == 'alpha':
         sigma = 1 / 5.1
         gamma = 1 / 14
@@ -47,7 +47,7 @@ def run_model(total_population, current_infected, vaccinated, variant):
 
     E0 = current_infected * 3
     I0 = current_infected
-    R0 = 0
+    R0 = recovered
     D0 = 0
     S0 = total_population - E0 - I0 - R0 - vaccinated - D0
     y0 = S0, E0, I0, R0, vaccinated, D0
