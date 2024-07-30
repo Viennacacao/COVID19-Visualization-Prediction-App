@@ -59,10 +59,18 @@ cd COVID19-Visualization-Prediction-App
    ```bash
    source venv/bin/activate
    ```
-2. 运行后端服务器
+2. 终端进入后端服务器
    ```bash
-   flask run
+   cd backend
    ```
+
+3. 运行后端服务器
+
+```bash
+python app.py	
+```
+
+#### 
 
 #### 运行前端
 
