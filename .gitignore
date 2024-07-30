@@ -3,7 +3,9 @@ venv/
 
 # Ignore node_modules
 node_modules/
-
+frontend/node_modules/
 # Other common ignores
 *.log
 .DS_Store
+
+
