@@ -30,14 +30,17 @@ def run_model(total_population, current_infected, recovered, vaccinated, variant
         sigma = 1 / 5.1
         gamma = 1 / 14
         epsilon = 0.1
+        cfr = 0.026  # Alpha致死率为2.6%
     elif variant.lower() == 'delta':
         sigma = 1 / 4.4
         gamma = 1 / 10
         epsilon = 0.2
+        cfr = 0.02  # Delta致死率为2.0%
     elif variant.lower() == 'omicron':
         sigma = 1 / 3.42
         gamma = 1 / 7
         epsilon = 0.3
+        cfr = 0.007  # Omicron总体致死率为0.7%
     else:
         raise ValueError("Unknown variant")
     
@@ -48,7 +51,7 @@ def run_model(total_population, current_infected, recovered, vaccinated, variant
     E0 = current_infected * 3
     I0 = current_infected
     R0 = recovered
-    D0 = 0
+    D0 = int(current_infected * cfr)  # 根据当前感染人数和致死率计算初始死亡人数
     S0 = total_population - E0 - I0 - R0 - vaccinated - D0
     y0 = S0, E0, I0, R0, vaccinated, D0
 
@@ -60,3 +63,4 @@ def run_model(total_population, current_infected, recovered, vaccinated, variant
     max_infected_day = np.argmax(sol[:, 2])
 
     return sol, t, six_month_infected, max_infected, max_infected_day
+
